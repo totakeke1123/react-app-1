@@ -1,9 +1,15 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { ColoredMessage } from './components/ColoredMessage';
 
 export const App = () => {
   // Stateの定義
   const [num, setNum] = useState(0);
+
+  // Effectの定義
+  useEffect(() => {
+    alert();
+  }, [num]);
 
   // return null;
 
