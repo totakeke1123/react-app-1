@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { ColoredMessage } from './components/ColoredMessage';
 
 export const App = () => {
+  // Stateの定義
+  const [num, setNum] = useState(0);
+
   // return null;
 
   // 「こんにちは！」を出力
@@ -30,7 +34,10 @@ export const App = () => {
 
   // ボタンのクリックイベントを設定
   const onClickButton = () => {
-    alert('ボタンをクリックしました');
+    // alert('ボタンをクリックしました');
+    // setNum(num + 1);
+    // 関数内で関数を指定すると、更新直前のそのStateの値が渡される
+    setNum((prev) => prev + 1);
   };
 
   // buttonにクリックイベントを割り当て
@@ -62,6 +69,7 @@ export const App = () => {
       <ColoredMessage color="blue">お元気ですか？</ColoredMessage>
       <ColoredMessage color="pink">元気です！</ColoredMessage>
       <button onClick={onClickButton}>ボタン</button>
+      <p>{num}</p>
     </>
   );
 };
