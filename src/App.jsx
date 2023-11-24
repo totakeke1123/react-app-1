@@ -1,3 +1,5 @@
+import { ColoredMessage } from './components/ColoredMessage';
+
 export const App = () => {
   // return null;
 
@@ -42,16 +44,23 @@ export const App = () => {
 
   // 事前にスタイルを定義することが可能
   // font-sizeではなく、fontSize。キャメルケースで書く。
-  const contentStyle = {
-    color: 'blue',
-    fontSize: '20px',
-  };
+  // const contentStyle = {
+  //   color: 'blue',
+  //   fontSize: '20px',
+  // };
+
+  // ピンク用に追加
+  // const contentPinkStyle = {
+  //   color: 'pink',
+  //   fontSize: '20px',
+  // };
 
   // スタイルをあてる時は、オブジェクトとして要素を指定
   return (
     <>
       <h1 style={{ color: 'red' }}>こんにちは！</h1>
-      <p style={contentStyle}>お元気ですか？</p>
+      <ColoredMessage color="blue">お元気ですか？</ColoredMessage>
+      <ColoredMessage color="pink">元気です！</ColoredMessage>
       <button onClick={onClickButton}>ボタン</button>
     </>
   );
